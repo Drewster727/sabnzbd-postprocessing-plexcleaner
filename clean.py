@@ -6,8 +6,8 @@ try:
     (scriptname, directory, orgnzbname, jobname, reportnumber, category, group, postprocstatus, url) = sys.argv
 except:
     try:
-	    directory = sys.argv[1]
-	    jobname = sys.argv[3]
+	directory = sys.argv[1]
+	jobname = sys.argv[3]
     except:
         print("No commandline parameters found")
         sys.exit(1)
