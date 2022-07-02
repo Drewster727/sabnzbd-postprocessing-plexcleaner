@@ -19,5 +19,7 @@ print(DOCKERRUN)
 with open("/tmp/output.log", "a") as output:
     subprocess.call(DOCKERRUN, shell=True, stdout=output, stderr=output)
 
+print("Clean completed successfully")
+
 # Success code
 sys.exit(0)
