@@ -1,8 +1,8 @@
 #!/usr/bin/python
 import sys
-from subprocess import PIPE, run
 import time
 import math
+from subprocess import PIPE, run
 
 try:
     (scriptname, directory, orgnzbname, jobname, reportnumber, category, group, postprocstatus, url) = sys.argv
@@ -21,8 +21,8 @@ def time_convert(sec):
     mins = mins % 60
     return "{0}h:{1}m:{2}s".format(int(hours),int(mins),math.ceil(sec))
 
-logfile="/tmp/output.log"
-cmd=f"docker run --rm -v {directory}:/clean:rw -v /opt/plexcleaner:/config ptr727/plexcleaner /PlexCleaner/PlexCleaner --settingsfile /config/PlexCleaner.json --logfile /config/PlexCleaner.log process --mediafiles /clean --parallel --threadcount 10"
+dir_clean=directory.replace("'", "\\'").replace(" ", "\\ ").replace(";", "\\;").replace("(", "\\(").replace(")", "\\)")
+cmd=f'docker run --rm -v {dir_clean}:/clean:rw -v /opt/plexcleaner:/config ptr727/plexcleaner /PlexCleaner/PlexCleaner --settingsfile /config/PlexCleaner.json --logfile /config/PlexCleaner.log process --mediafiles /clean --parallel --threadcount 10'
 print(cmd)
 print("--------------")
 start_time = time.time()
