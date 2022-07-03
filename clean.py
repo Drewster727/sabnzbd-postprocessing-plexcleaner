@@ -34,16 +34,16 @@ def move_dir(source, destination):
 
 def clean(directory, category):
     # configure
-    dir_destination="/media/tower/Storage/Completed"
-    category_destination_dir_map={
-        "tv":f"{dir_destination}/_tv",
-        "movies":f"{dir_destination}/_movies",
-        "music":f"{dir_destination}/_music"
-    }
-    cat=category.lower()
-    dir_destination_final=dir_destination
-    if cat in category_destination_dir_map:
-        dir_destination_final=category_destination_dir_map[cat]
+    # dir_destination="/media/tower/Storage/Completed"
+    # category_destination_dir_map={
+    #     "tv":f"{dir_destination}/_tv",
+    #     "movies":f"{dir_destination}/_movies",
+    #     "music":f"{dir_destination}/_music"
+    # }
+    # cat=category.lower()
+    # dir_destination_final=dir_destination
+    # if cat in category_destination_dir_map:
+    #     dir_destination_final=category_destination_dir_map[cat]
 
     # clean
     clean_start_time = time.time()
@@ -52,11 +52,11 @@ def clean(directory, category):
     clean_runtime = time_convert(clean_end_time - clean_start_time)
 
     # move
-    mv_start_time = time.time()
-    move_dir(directory, dir_destination_final)
-    mv_end_time = time.time()
-    move_runtime = time_convert(mv_end_time - mv_start_time)
-    print(f"Move succeeded ({move_runtime})")
+    # mv_start_time = time.time()
+    # move_dir(directory, dir_destination_final)
+    # mv_end_time = time.time()
+    # move_runtime = time_convert(mv_end_time - mv_start_time)
+    # print(f"Move succeeded ({move_runtime})")
 
     # Success code
     print(f"Clean succeeded ({clean_runtime})")
