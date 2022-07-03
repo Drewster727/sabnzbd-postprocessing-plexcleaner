@@ -1,6 +1,9 @@
 # sabnzbd-postprocessing-plexcleaner
 
-docker-compose example (docker.sock access is needed)
+Used in coordination wtith:
+https://github.com/Drewster727/sabnzbd-docker
+
+docker-compose example (docker.sock access is needed):
 ```
 sabnzbd:
     image: drewster727/sabnzbd-docker:3.6.0
