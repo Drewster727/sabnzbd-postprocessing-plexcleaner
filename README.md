@@ -1,5 +1,10 @@
 # sabnzbd-postprocessing-plexcleaner
 
+update docker.sock permissions:
+```
+sudo chmod 666 /var/run/docker.sock
+```
+
 Used in coordination wtith:
 https://github.com/Drewster727/sabnzbd-docker
 
